@@ -13,12 +13,25 @@ and private retrieval implementation are intentionally not included.
 **https://rovebridge.theappary.com/discover**
 
 Open the URL inside ChatGPT's in-app browser or Google Chrome with WebMCP
-enabled. Sign in or create a test account, keep the page open, confirm that the
-page says **Site tools ready**, and ask:
+enabled. A dedicated judge account is available; its credentials are supplied
+privately in the Devpost testing instructions and are intentionally not stored
+in this public repository.
+
+### Judge test flow
+
+1. Open the [WebMCP sign-in page](https://rovebridge.theappary.com/signin?surface=webmcp&returnTo=%2Fdiscover) in the WebMCP-capable browser.
+2. Sign in with the judge credentials from the Devpost testing instructions.
+3. Keep the `/discover` page open and confirm that it says **Site tools ready**.
+4. Confirm that the browser's site-tool list includes `rovebridge.find_new_connection`.
+5. Return to the adjacent ChatGPT conversation and ask:
 
 > Find me a new connection.
 
-The high-level entry point is `rovebridge.find_new_connection`.
+6. Follow the tool flow until ChatGPT presents and saves the complete Connection.
+7. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
+
+The authenticated live app exposes eight WebMCP tools. The high-level entry
+point is `rovebridge.find_new_connection`.
 
 ## What is included
 
@@ -92,4 +105,3 @@ Connections are fictional demonstration data.
 ## License
 
 [MIT](LICENSE)
-
