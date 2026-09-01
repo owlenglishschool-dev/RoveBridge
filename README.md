@@ -23,17 +23,20 @@ in this public repository.
 2. Sign in with the judge credentials from the Devpost testing instructions.
 3. Keep the `/discover` page open and confirm that it says **Site tools ready**.
 4. Confirm that the browser's site-tool list includes `rovebridge.find_new_connection`.
-5. Return to the adjacent ChatGPT conversation and ask:
+5. Return to a ChatGPT conversation that already contains a concrete topic, experience, question, project, or idea, and ask:
 
-> Find me a new connection.
+> Use a concrete idea already discussed in this chat to find me a new connection. If this chat has no substantive topic yet, ask me to recall one specific past conversation or idea first.
 
-6. Review the compact current-conversation summary when ChatGPT asks permission to share it with RoveBridge. The raw transcript is not required.
-7. Follow the tool flow until ChatGPT presents and saves the complete Connection.
-8. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
+6. If the chat was empty, briefly describe the past discussion or idea when ChatGPT asks. A generic request to use RoveBridge is deliberately rejected as an anchor.
+7. Review the compact current-conversation capsule when ChatGPT asks permission to share it with RoveBridge. The raw transcript is not required.
+8. Follow the tool flow until ChatGPT presents and saves the complete Connection.
+9. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
 
 The authenticated live app exposes seven WebMCP tools. The high-level entry
 point is `rovebridge.find_new_connection`; the write step stores only an approved
-compact anchor from the current conversation. WebMCP does not expose the legacy
+compact episode from the current conversation. Its schema and server-side gate
+require an episode description, a concrete detail, and a substantive anchor
+independent of the RoveBridge workflow. WebMCP does not expose the legacy
 past-chat import or profile-sync tools.
 
 ## What is included
