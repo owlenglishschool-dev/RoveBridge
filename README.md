@@ -23,20 +23,22 @@ in this public repository.
 2. Sign in with the judge credentials from the Devpost testing instructions.
 3. Keep the `/discover` page open and confirm that it says **Site tools ready**.
 4. Confirm that the browser's site-tool list includes `rovebridge.find_new_connection`.
-5. Return to a ChatGPT conversation that already contains a concrete topic, experience, question, project, or idea, and ask:
+5. Return to the ChatGPT conversation opened by the site and send the prefilled prompt:
 
-> Use a concrete idea already discussed in this chat to find me a new connection. If this chat has no substantive topic yet, ask me to recall one specific past conversation or idea first.
+> Recall one random past conversation of ours and summarize it visibly here. Then use that visible summary with RoveBridge to find me a new connection.
 
-6. If the chat was empty, briefly describe the past discussion or idea when ChatGPT asks. A generic request to use RoveBridge is deliberately rejected as an anchor.
-7. Review the compact current-conversation capsule when ChatGPT asks permission to share it with RoveBridge. The raw transcript is not required.
+6. ChatGPT recalls one random or diversity-weighted past conversation using its own host capability and displays a compact summary in the current thread. It must not ask the user to provide the chat.
+7. Review the displayed episode and the compact capsule when ChatGPT asks permission to share it with RoveBridge. The raw transcript is not required.
 8. Follow the tool flow until ChatGPT presents and saves the complete Connection.
 9. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
 
 The authenticated live app exposes seven WebMCP tools. The high-level entry
 point is `rovebridge.find_new_connection`; the write step stores only an approved
-compact episode from the current conversation. Its schema and server-side gate
-require an episode description, a concrete detail, and a substantive anchor
-independent of the RoveBridge workflow. WebMCP does not expose the legacy
+compact episode that ChatGPT first recalled and visibly displayed in the current
+conversation. Its schema and server-side gate require the host-recalled origin,
+random-or-diversity-weighted selection, visible-display attestation, an episode
+description, a concrete detail, and a substantive anchor independent of the
+RoveBridge workflow. WebMCP does not expose the legacy
 past-chat import or profile-sync tools.
 
 ## What is included

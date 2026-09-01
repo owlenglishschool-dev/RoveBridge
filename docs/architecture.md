@@ -31,18 +31,21 @@ a website session is not treated as an MCP OAuth bearer token.
 
 ## Current-conversation consent boundary
 
-The WebMCP entry tool is read-only and receives no conversation content. It first
-requires a substantive topic or recalled episode to exist in the current chat.
-The request to use RoveBridge is workflow context and is rejected as an anchor.
-When the chat has no qualifying topic, the host asks the user to recall one
-specific past discussion or idea in the current chat and waits for their answer.
+The WebMCP entry tool is read-only and receives no conversation content. It
+returns a prompt instructing the ChatGPT host to recall one random or
+diversity-weighted past conversation using its own conversation-memory
+capability. ChatGPT—not the user—selects the episode and visibly summarizes it
+in the current thread. The request to use RoveBridge is workflow context and is
+rejected as an anchor.
 
-The write schema requires an episode origin, episode description, concrete
-detail, summary, and substantive anchor. The server applies a second quality
-gate to reject generic or padded RoveBridge-invocation capsules. Before the write
-tool runs, the host must show what will be shared and complete its permission
-step. Raw message arrays are not accepted. Signing in proves identity but does
-not replace this data-sharing permission.
+The write schema requires `host_recalled_past_conversation` origin,
+`random_or_diversity_weighted` selection, `displayed_in_current_chat=true`, an
+episode description, concrete detail, summary, and substantive anchor. The
+server applies a second quality gate to reject generic or padded
+RoveBridge-invocation capsules. Before the write tool runs, the host must show
+what will be shared and complete its permission step. Raw message arrays are not
+accepted. Signing in proves identity but does not replace this data-sharing
+permission.
 
 The WebMCP surface intentionally omits the legacy past-conversation import and
 profile-sync tools. Those tools remain available only through the separately
