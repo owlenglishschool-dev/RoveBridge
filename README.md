@@ -27,11 +27,14 @@ in this public repository.
 
 > Find me a new connection.
 
-6. Follow the tool flow until ChatGPT presents and saves the complete Connection.
-7. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
+6. Review the compact current-conversation summary when ChatGPT asks permission to share it with RoveBridge. The raw transcript is not required.
+7. Follow the tool flow until ChatGPT presents and saves the complete Connection.
+8. Optionally review the saved result at [Connections](https://rovebridge.theappary.com/account/connections).
 
-The authenticated live app exposes eight WebMCP tools. The high-level entry
-point is `rovebridge.find_new_connection`.
+The authenticated live app exposes seven WebMCP tools. The high-level entry
+point is `rovebridge.find_new_connection`; the write step stores only an approved
+compact anchor from the current conversation. WebMCP does not expose the legacy
+past-chat import or profile-sync tools.
 
 ## What is included
 
@@ -94,7 +97,9 @@ const handle = await registerWebMcp({
 ```
 
 The same-origin endpoint derives the user identity from the existing website
-session. The OAuth-protected Remote MCP endpoint remains separate.
+session. Authentication and conversation-sharing permission remain separate:
+signing in does not authorize a transcript transfer. The OAuth-protected Remote
+MCP endpoint remains separate.
 
 ## Privacy
 
